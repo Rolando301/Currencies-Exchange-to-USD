@@ -1,0 +1,75 @@
+# Currencies
+GEL = 0.36
+RMB = 0.14
+EUR = 1.04
+TRY = 0.27
+
+# loop
+while True:
+    
+    # pick a currency
+    Pick_Currency = input('Pick a currency: ')
+    
+    # RMB
+    if Pick_Currency == 'RMB':
+        number1 = input('Pick a number: ')
+        print(float(RMB * float(number1)))
+
+    # GEL    
+    elif Pick_Currency == 'GEL':
+        number2 = input('Pick a number: ')
+        print(float(GEL * float(number2)))
+
+    # EUR        
+    elif Pick_Currency == 'EUR':
+        number3 = input('Pick a number: ')
+        print(float(EUR * float(number3)))
+
+    # TRY            
+    elif Pick_Currency == 'TRY':
+        number4 = input('Pick a number: ')
+        print(float(TRY * float(number4)))
+    
+    # calulations of an hourly job
+    elif Pick_Currency == 'HOURLY':
+        HOURLY = float(input('How many hours do you work? '))
+        number5 = float(input('How much do you make an hour: '))
+        response = input(f'You make {HOURLY * number5} per week. Press enter to see month to month and year to year: ')
+        print(f'MONTH: {HOURLY * number5 * 4} YEAR: {HOURLY * number5 * 4 * 12}')
+    
+    # power off
+    elif Pick_Currency == 'x':
+        print('power off')
+        break
+    
+    # calculations of a yearly income
+    elif Pick_Currency == 'YEARLY':
+        # income list
+        income_brackets = {
+        10000: "6 to 7",
+        20000: "10 to 11",
+        30000: "15 to 16",
+        40000: "21 to 22",
+        50000: "26 to 27",
+        60000: "31 to 32",
+        70000: "36 to 37",
+        80000: "42 to 43",
+        90000: "47 to 48",
+        100000: "52 to 53",
+        120000: "62 to 63",
+        130000: "67 to 68",
+        140000: "72 to 73",
+        150000: "78 to 79"
+}
+        yearly_icome = float(input('How much do you make per year? '))
+        
+        rounded_income = round(yearly_icome, -4)
+        
+        if rounded_income in income_brackets:
+            print(f'You make approximately {income_brackets[rounded_income]} dollars an hour.')
+        
+    else:
+        print('Pick one of the currecnies, (GEL, RMB, EUR, TRY) ' 
+              + 'For salary calculations type HOURLY or YEARLY.')    
+    continue
+    
